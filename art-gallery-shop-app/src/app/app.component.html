@@ -1,22 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:left">
+<div>
     <h1>
         Welcome to the {{title}}
     </h1>
     <img src="../assets/central-image.jpg" alt="central image" width="1000" height="200">
 </div>
-<div>
-    <h2>There are {{totalArtWorks()}} art works in stock.</h2>
-    <ul>
-        <li *ngFor="let artWork of myArtWorks">
-            <h2>{{artWork.name | uppercase}}</h2>
-            <p>{{artWork.type}}</p>
-            <p>{{artWork.medium}}</p>
-            <p>{{artWork.description}}</p>
-            <p *ngIf="artWork.stock > 0">{{artWork.stock}} in stock</p>
-            <p *ngIf="artWork.stock === 0">Out of Stock</p>
-            <p>{{artWork.price | currency:'USD':true}}</p>
-            <p *ngIf="artWork.price === 0.0">Unsaleable</p>
-        </li>
-    </ul>
-</div>
+<app-artwork-list></app-artwork-list>

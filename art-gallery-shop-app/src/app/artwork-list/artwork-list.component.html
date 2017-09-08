@@ -1,13 +1,21 @@
-<h2>There are {{totalArtWorks()}} art works in stock.</h2>
-<ul>
-    <li *ngFor="let artWork of myArtWorks">
+<div>
+    <h2>There are {{totalArtWorks()}} art works in stock.</h2>
+</div>
+<div>
+    <section *ngFor="let artWork of myArtWorks" [class.selected]="artWork.selected">
+        <img [src]="getImage(artWork)" />
         <h2>{{artWork.name | uppercase}}</h2>
         <p>{{artWork.type}}</p>
         <p>{{artWork.medium}}</p>
         <p>{{artWork.description}}</p>
+        <div>
+            <button (click)="decreaseQuantity(artWork)" [disabled]="artWork.quantity === 0">-</button>
+            <input type="number" maxlength="2" placeholder="0" class="amount" [value]="artWork.quantity" />
+            <button (click)="increaseQuantity(artWork)" [disabled]="artWork.stock === 0">+</button>
+        </div>
         <p *ngIf="artWork.stock > 0">{{artWork.stock}} in stock</p>
         <p *ngIf="artWork.stock === 0">Out of Stock</p>
         <p>{{artWork.price | currency:'USD':true}}</p>
         <p *ngIf="artWork.price === 0.0">Unsaleable</p>
-    </li>
-</ul>
+    </section>
+</div>

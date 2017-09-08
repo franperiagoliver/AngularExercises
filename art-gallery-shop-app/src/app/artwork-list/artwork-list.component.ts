@@ -24,17 +24,30 @@ export class ArtworkListComponent implements OnInit {
     }
     return result;
   }
-}
 
-/*
-totalItems(){
-  return this.myArtWorks.reduce(function(prev, current)) { return prev + current.stock; }, 0);
-}
-*/
+  getImage(artWork: ArtWork) {
+    return '../assets/' + artWork.image;
+  }
 
-/*
-totalItems(){
-  return this.myArtWorks.reduce( (prev, current) => prev + current.stock, 0);
-}
-*/
+  increaseQuantity(artWork: ArtWork) {
+    artWork.quantity++;
+    artWork.stock--;
+  }
 
+  decreaseQuantity(artWork: ArtWork) {
+    artWork.quantity--;
+    artWork.stock++;
+  }
+
+  /*
+  totalItems(){
+    return this.myArtWorks.reduce(function(prev, current)) { return prev + current.stock; }, 0);
+  }
+  */
+
+  /*
+  totalItems(){
+    return this.myArtWorks.reduce( (prev, current) => prev + current.stock, 0);
+  }
+  */
+}

@@ -10,6 +10,7 @@ import { ARTWORKS } from './mocks';
 export class ArtworkListComponent implements OnInit {
 
   myArtWorks: ArtWork[];
+  searches: Array<String>;
 
   constructor() { }
 
@@ -38,6 +39,14 @@ export class ArtworkListComponent implements OnInit {
     artWork.quantity--;
     artWork.stock++;
   }
+
+  // showKey(event) {
+  //   alert(event.keyCode);
+  // }
+
+  // getCoord(event) {
+  //   console.log(event.clientX + ', ' + event.clientY);
+  // }
 
   /*
   totalItems(){

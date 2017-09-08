@@ -1,5 +1,8 @@
 <div>
     <h2>There are {{totalArtWorks()}} art works in stock.</h2>
+    <label>Search an art work: </label><input type="text" [(ngModel)]="searches" />
+    <button>Search</button>
+    <br/><br/>
 </div>
 <div>
     <section *ngFor="let artWork of myArtWorks" [class.selected]="artWork.selected">
@@ -10,12 +13,17 @@
         <p>{{artWork.description}}</p>
         <div>
             <button (click)="decreaseQuantity(artWork)" [disabled]="artWork.quantity === 0">-</button>
-            <input type="number" maxlength="2" placeholder="0" class="amount" [value]="artWork.quantity" />
+            <input type="number" maxlength="2" placeholder="0" class="amount" [(ngModel)]="artWork.quantity" />
             <button (click)="increaseQuantity(artWork)" [disabled]="artWork.stock === 0">+</button>
+            <!-- <input type="text" (keydown)="showKey($event)" />
+            <h2 (mouseover)="getCoord($event)">Hover Me</h2> -->
         </div>
         <p *ngIf="artWork.stock > 0">{{artWork.stock}} in stock</p>
         <p *ngIf="artWork.stock === 0">Out of Stock</p>
         <p>{{artWork.price | currency:'USD':true}}</p>
         <p *ngIf="artWork.price === 0.0">Unsaleable</p>
     </section>
+</div>
+<div>
+    Your searches:
 </div>

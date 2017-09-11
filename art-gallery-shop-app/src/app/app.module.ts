@@ -7,6 +7,8 @@ import { ArtworkListComponent } from './artwork-list/artwork-list.component';
 
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import { SearchPipe } from '../pipes/search.pipe';
+import { ArtWorkListService } from './artwork-list/artwork-list.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,10 @@ import { SearchPipe } from '../pipes/search.pipe';
   imports: [
     BrowserModule,
     FormsModule,
-    Ng2FilterPipeModule
+    Ng2FilterPipeModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ArtWorkListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

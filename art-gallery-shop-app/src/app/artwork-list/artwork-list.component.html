@@ -9,7 +9,7 @@
 </div>
 <div>
     <section *ngFor="let artWork of myArtWorks | search:artWorkFilter" [class.selected]="artWork.selected">
-        <img [src]="getImage(artWork)" />
+        <img [src]="getImage(artWork)" height="200" width="200" />
         <h2>{{artWork.name | uppercase}}</h2>
         <p>{{artWork.type}}</p>
         <p>{{artWork.medium}}</p>

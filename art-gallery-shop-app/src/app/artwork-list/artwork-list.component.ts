@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtWork } from './artwork.model';
 import { ARTWORKS } from './mocks';
+import { ArtWorkListService } from './artwork-list.service';
 
 @Component({
   selector: 'app-artwork-list',
@@ -12,10 +13,11 @@ export class ArtworkListComponent implements OnInit {
   myArtWorks: ArtWork[];
   artworkFilter: any = { name: '', price: '' };
 
-  constructor() { }
+  constructor(private artWorkListService: ArtWorkListService) { }
 
   ngOnInit() {
-    this.myArtWorks = ARTWORKS;
+    this.artWorkListService.getItemList()
+                           .subscribe(myArtWorks => this.myArtWorks = myArtWorks);
   }
 
   totalArtWorks() {

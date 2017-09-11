@@ -1,0 +1,75 @@
+{
+    "artwork-list": [{
+            "id": 1,
+            "name": "The Guernica",
+            "image": "guernica.jpg",
+            "type": "Picture",
+            "medium": "Oil on canvas",
+            "description": "A mural-sized oil painting on canvas by Spanish artist Pablo Picasso completed in June 1937.",
+            "stock": 1,
+            "price": 5000.57,
+            "selected": true,
+            "quantity": 0
+        },
+        {
+            "id": 2,
+            "name": "Death of the Virgin",
+            "image": "deathvirgin.jpg",
+            "type": "Picture",
+            "medium": "Oil on canvas",
+            "description": "A painting completed by the Italian Baroque master Caravaggio.",
+            "stock": 3,
+            "price": 7010.99,
+            "selected": false,
+            "quantity": 0
+        },
+        {
+            "id": 3,
+            "name": "Ecce Homo",
+            "image": "eccehomo.jpg",
+            "type": "Picture",
+            "medium": "Fresco",
+            "description": "The best work arround the world.",
+            "stock": 0,
+            "price": 9999.52,
+            "selected": false,
+            "quantity": 0
+        },
+        {
+            "id": 4,
+            "name": "David",
+            "image": "david.jpg",
+            "type": "Sculpture",
+            "medium": "Marble",
+            "description": "A masterpiece of Michelangelo.",
+            "stock": 1,
+            "price": 3000.57,
+            "selected": false,
+            "quantity": 0
+        },
+        {
+            "id": 5,
+            "name": "Beach David",
+            "image": "modern-david.jpg",
+            "type": "Sculpture",
+            "medium": "Paperboard",
+            "description": "A fake masterpiece of Michelangelo.",
+            "stock": 1,
+            "price": 5.1,
+            "selected": false,
+            "quantity": 0
+        },
+        {
+            "id": 6,
+            "name": "Fat David",
+            "image": "fat.jpg",
+            "type": "Sculpture",
+            "medium": "Clay",
+            "description": "A fake masterpiece of Michelangelo.",
+            "stock": 54,
+            "price": 101.99,
+            "selected": false,
+            "quantity": 0
+        }
+    ]
+}

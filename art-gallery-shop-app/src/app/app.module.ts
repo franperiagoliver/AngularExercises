@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { ArtworkListComponent } from './artwork-list/artwork-list.component';
 
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
+import { SearchPipe } from '../pipes/search.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArtworkListComponent
+    ArtworkListComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

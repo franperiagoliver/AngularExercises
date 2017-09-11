@@ -1,13 +1,14 @@
 <div>
     <h2>There are {{totalArtWorks()}} art works in stock.</h2>
     <div class="input-browser">
-        <input type="search" maxlength=26 placeholder="Search an art work" [(ngModel)]="artworkFilter.name">
+        <p>Search an art work by name</p>
+        <input type="search" maxlength=26 placeholder="Search an art work" [(ngModel)]="artWorkFilter">
         <ul>
         </ul>
     </div>
 </div>
 <div>
-    <section *ngFor="let artWork of myArtWorks" [class.selected]="artWork.selected">
+    <section *ngFor="let artWork of myArtWorks | search:artWorkFilter" [class.selected]="artWork.selected">
         <img [src]="getImage(artWork)" />
         <h2>{{artWork.name | uppercase}}</h2>
         <p>{{artWork.type}}</p>
@@ -25,7 +26,4 @@
         <p>{{artWork.price | currency:'USD':true}}</p>
         <p *ngIf="artWork.price === 0.0">Unsaleable</p>
     </section>
-</div>
-<div>
-    Your searches:
 </div>

@@ -11,7 +11,7 @@ import { ArtWorkListService } from './artwork-list.service';
 export class ArtworkListComponent implements OnInit {
 
   myArtWorks: ArtWork[];
-  artworkFilter: any = { name: '', price: '' };
+  artWorkFilter = '';
 
   constructor(private artWorkListService: ArtWorkListService) { }
 
@@ -21,11 +21,7 @@ export class ArtworkListComponent implements OnInit {
   }
 
   totalArtWorks() {
-    let result = 0;
-    for (let artWork of this.myArtWorks) {
-      result += artWork.stock;
-    }
-    return result;
+    return this.myArtWorks ? this.myArtWorks.reduce( (prev, current) => prev + current.stock, 0) : 0 ;
   }
 
   getImage(artWork: ArtWork) {
@@ -40,6 +36,11 @@ export class ArtworkListComponent implements OnInit {
   decreaseQuantity(artWork: ArtWork) {
     artWork.quantity--;
     artWork.stock++;
+  }
+
+  getUpdateService(artWork: ArtWork) {
+    this.artWorkListService.updateArtWork(artWork)
+                           .subscribe(myArtWorks => this.myArtWorks = myArtWorks);
   }
 
   // showKey(event) {
@@ -57,8 +58,12 @@ export class ArtworkListComponent implements OnInit {
   */
 
   /*
-  totalItems(){
-    return this.myArtWorks.reduce( (prev, current) => prev + current.stock, 0);
+  totalArtWorks() {
+    let result = 0;
+    for (let artWork of this.myArtWorks) {
+      result += artWork.stock;
+    }
+    return result;
   }
   */
 }

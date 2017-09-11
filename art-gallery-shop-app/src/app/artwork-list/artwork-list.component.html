@@ -13,7 +13,8 @@
         <h2>{{artWork.name | uppercase}}</h2>
         <p>{{artWork.type}}</p>
         <p>{{artWork.medium}}</p>
-        <p>{{artWork.description}}</p>
+        <input type="text">{{artWork.description}}<input>
+        <input type="text" maxlength=26 placeholder="Modify the description"><button (click)="getUpdateService(artwork)">Update</button>
         <div>
             <button (click)="decreaseQuantity(artWork)" [disabled]="artWork.quantity === 0">-</button>
             <input type="number" maxlength="2" placeholder="0" class="amount" [(ngModel)]="artWork.quantity" />

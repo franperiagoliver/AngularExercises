@@ -10,7 +10,7 @@ import { ARTWORKS } from './mocks';
 export class ArtworkListComponent implements OnInit {
 
   myArtWorks: ArtWork[];
-  searches: Array<String>;
+  artworkFilter: any = { name: '', price: '' };
 
   constructor() { }
 

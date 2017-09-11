@@ -1,8 +1,10 @@
 <div>
     <h2>There are {{totalArtWorks()}} art works in stock.</h2>
-    <label>Search an art work: </label><input type="text" [(ngModel)]="searches" />
-    <button>Search</button>
-    <br/><br/>
+    <div class="input-browser">
+        <input type="search" maxlength=26 placeholder="Search an art work" [(ngModel)]="artworkFilter.name">
+        <ul>
+        </ul>
+    </div>
 </div>
 <div>
     <section *ngFor="let artWork of myArtWorks" [class.selected]="artWork.selected">

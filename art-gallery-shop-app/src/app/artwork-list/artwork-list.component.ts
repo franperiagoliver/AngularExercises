@@ -40,7 +40,7 @@ export class ArtworkListComponent implements OnInit {
 
   getUpdateService(artWork: ArtWork) {
     this.artWorkListService.updateArtWork(artWork)
-                           .subscribe(myArtWorks => this.myArtWorks = myArtWorks);
+                           .subscribe(artWorkTemp => this.myArtWorks = artWorkTemp);
   }
 
   // showKey(event) {

@@ -1,10 +1,9 @@
 <div>
     <h2>There are {{totalArtWorks()}} art works in stock.</h2>
+    <h3>There are {{totalInCart()}} art works in cart.</h3>
     <div class="input-browser">
         <p>Search an art work by name</p>
         <input type="search" maxlength=26 placeholder="Search an art work" [(ngModel)]="artWorkFilter">
-        <ul>
-        </ul>
     </div>
 </div>
 <div>
@@ -20,11 +19,12 @@
             <input type="number" maxlength="2" placeholder="0" class="amount" [(ngModel)]="artWork.quantity" />
             <button (click)="increaseQuantity(artWork)" [disabled]="artWork.stock === 0">+</button>
             <!-- <input type="text" (keydown)="showKey($event)" />
-            <h2 (mouseover)="getCoord($event)">Hover Me</h2> -->
+                      <h2 (mouseover)="getCoord($event)">Hover Me</h2> -->
         </div>
         <p *ngIf="artWork.stock > 0">{{artWork.stock}} in stock</p>
         <p *ngIf="artWork.stock === 0">Out of Stock</p>
         <p>{{artWork.price | currency:'USD':true}}</p>
         <p *ngIf="artWork.price === 0.0">Unsaleable</p>
+        <button (click)="addArtWork(artWork)">Add to cart</button><br><br>
     </section>
 </div>

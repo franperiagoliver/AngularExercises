@@ -9,12 +9,19 @@ import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import { SearchPipe } from '../pipes/search.pipe';
 import { ArtWorkListService } from './artwork-list/artwork-list.service';
 import { HttpModule } from '@angular/http';
+import { ArtworkComponent } from './artwork-list/artwork/artwork.component';
+import { CartComponent } from './cart/cart.component';
+import { OrderComponent } from './order/order.component';
+import { CartService } from './cart/cart.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArtworkListComponent,
-    SearchPipe
+    SearchPipe,
+    ArtworkComponent,
+    CartComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +29,10 @@ import { HttpModule } from '@angular/http';
     Ng2FilterPipeModule,
     HttpModule
   ],
-  providers: [ArtWorkListService],
+  providers: [
+    ArtWorkListService,
+    CartService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

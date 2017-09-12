@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ArtWork } from './artwork.model';
 import { ARTWORKS } from './mocks';
 import { ArtWorkListService } from './artwork-list.service';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-artwork-list',
@@ -13,7 +14,7 @@ export class ArtworkListComponent implements OnInit {
   myArtWorks: ArtWork[];
   artWorkFilter = '';
 
-  constructor(private artWorkListService: ArtWorkListService) { }
+  constructor(private artWorkListService: ArtWorkListService, private cartService: CartService) { }
 
   ngOnInit() {
     this.artWorkListService.getItemList()
@@ -50,6 +51,14 @@ export class ArtworkListComponent implements OnInit {
     } else {
       artWork.editable = true;
     }
+  }
+
+  addArtWork(artWork: ArtWork) {
+    this.cartService.addToCart(artWork);
+  }
+
+  totalInCart() {
+    this.cartService.totalArtWorksInCart();
   }
 
   // showKey(event) {

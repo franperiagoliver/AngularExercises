@@ -11,3 +11,7 @@ img {
     width: 15%;
     height: 15%;
 }
+
+#description:hover {
+    border: 1px solid black;
+}

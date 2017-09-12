@@ -6,11 +6,12 @@
       "image": "guernica.jpg",
       "type": "Picture",
       "medium": "Oil on canvas",
-      "description": "A mural-sized oil painting on canvas by Spanish artist Pablo Picasso completed in June 1937.",
+      "description": "A mural oil on canvas by Spanish artist Pablo Picasso completed in June 1937",
       "stock": 1,
       "price": 5000.57,
       "selected": true,
-      "quantity": 0
+      "quantity": 0,
+      "editable": false
     },
     {
       "id": 2,
@@ -18,11 +19,12 @@
       "image": "deathvirgin.jpg",
       "type": "Picture",
       "medium": "Oil on canvas",
-      "description": "A painting completed by the Italian Baroque master Caravaggio.",
+      "description": "A painting completed by the Italian Baroque master Caravaggio",
       "stock": 3,
       "price": 7010.99,
       "selected": false,
-      "quantity": 0
+      "quantity": 0,
+      "editable": false
     },
     {
       "id": 3,
@@ -30,11 +32,12 @@
       "image": "eccehomo.jpg",
       "type": "Picture",
       "medium": "Fresco",
-      "description": "The best work arround the world.",
+      "description": "The best work arround the world",
       "stock": 0,
       "price": 9999.52,
       "selected": false,
-      "quantity": 0
+      "quantity": 0,
+      "editable": false
     },
     {
       "id": 4,
@@ -42,11 +45,12 @@
       "image": "david.jpg",
       "type": "Sculpture",
       "medium": "Marble",
-      "description": "A masterpiece of Michelangelo.",
+      "description": "A masterpiece of Michelangelo",
       "stock": 1,
       "price": 3000.57,
       "selected": false,
-      "quantity": 0
+      "quantity": 0,
+      "editable": false
     },
     {
       "id": 5,
@@ -54,11 +58,12 @@
       "image": "modern-david.jpg",
       "type": "Sculpture",
       "medium": "Paperboard",
-      "description": "A fake masterpiece of Michelangelo.",
+      "description": "A fake masterpiece of Michelangelo",
       "stock": 1,
       "price": 5.1,
       "selected": false,
-      "quantity": 0
+      "quantity": 0,
+      "editable": false
     },
     {
       "id": 6,
@@ -66,11 +71,12 @@
       "image": "fat.jpg",
       "type": "Sculpture",
       "medium": "Clay",
-      "description": "A fake masterpiece of Michelangelo.",
+      "description": "A fake masterpiece of Michelangelo",
       "stock": 54,
       "price": 101.99,
       "selected": false,
-      "quantity": 0
+      "quantity": 0,
+      "editable": false
     },
     {
       "id": 7,
@@ -78,9 +84,70 @@
       "image": "michelin.jpg",
       "type": "Sculpture",
       "medium": "Plaster",
-      "description": "A fake masterpiece of Michelangelo.",
+      "description": "A fake masterpiece of Michelangelo",
       "stock": 26,
       "price": 23.87,
+      "selected": false,
+      "quantity": 0,
+      "editable": false
+    },
+    {
+      "id": 8,
+      "name": "Mona Lisa",
+      "image": "monalisa.jpg",
+      "type": "Picture",
+      "medium": "Oil",
+      "description": "The masterpiece of Leonardo da Vinci",
+      "stock": 3,
+      "price": 58793.1,
+      "selected": false,
+      "quantity": 0
+    },
+    {
+      "id": 9,
+      "name": "Mona Lisa Botero",
+      "image": "monalisa-botero.jpg",
+      "type": "Picture",
+      "medium": "Oil",
+      "description": "Botero version of Mona Lisa",
+      "stock": 1,
+      "price": 1000.99,
+      "selected": false,
+      "quantity": 0
+    },
+    {
+      "id": 10,
+      "name": "Mona Lisa Lego",
+      "image": "monalisa-lego.jpg",
+      "type": "Picture",
+      "medium": "Oil",
+      "description": "Lego version of Mona Lisa",
+      "stock": 1,
+      "price": 1000.99,
+      "selected": false,
+      "quantity": 0
+    },
+    {
+      "id": 11,
+      "name": "Mona Lisa Kiss",
+      "image": "monalisa-kiss.jpg",
+      "type": "Picture",
+      "medium": "Oil",
+      "description": "Kiss version of Mona Lisa",
+      "stock": 1,
+      "price": 1000.99,
+      "selected": false,
+      "quantity": 0
+    },
+    {
+      "id": 12,
+      "name": "Self-portrait of Albert Dürer",
+      "image": "durer.jpg",
+      "type": "Picture",
+      "medium": "Oil",
+      "description": "a painting on wood panel by the German Renaissance artist Albrecht Dürer",
+      "stock": 1,
+      "price": 1000.99,
       "selected": false,
       "quantity": 0
     }

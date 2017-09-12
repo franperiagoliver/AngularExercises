@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class ArtWorkListService {
 
-    itemsUrl = 'http://localhost:3000';
+    itemsUrl = 'http://localhost:3000/artwork-list';
 
     constructor(private http: Http) { }
 

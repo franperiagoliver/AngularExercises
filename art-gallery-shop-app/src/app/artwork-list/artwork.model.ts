@@ -9,4 +9,5 @@ export class ArtWork {
     price: number;
     selected: boolean;
     quantity: number;
+    editable: boolean;
 }

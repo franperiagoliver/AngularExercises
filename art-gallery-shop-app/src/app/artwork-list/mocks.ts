@@ -10,7 +10,8 @@ export const ARTWORKS: ArtWork[] = [{
     'stock': 1,
     'price': 5000.57,
     'selected': true,
-    'quantity': 0
+    'quantity': 0,
+    'editable': false
   },
   {
     'id': 2,
@@ -22,7 +23,8 @@ export const ARTWORKS: ArtWork[] = [{
     'stock': 3,
     'price': 7010.99,
     'selected': false,
-    'quantity': 0
+    'quantity': 0,
+    'editable': true
   },
   {
     'id': 3,
@@ -34,5 +36,6 @@ export const ARTWORKS: ArtWork[] = [{
     'stock': 0,
     'price': 9999.52,
     'selected': false,
-    'quantity': 0
+    'quantity': 0,
+    'editable': true
   }];

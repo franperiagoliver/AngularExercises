@@ -39,8 +39,17 @@ export class ArtworkListComponent implements OnInit {
   }
 
   getUpdateService(artWork: ArtWork) {
+    this.isEditable(artWork);
     this.artWorkListService.updateArtWork(artWork)
-                           .subscribe(artWorkTemp => this.myArtWorks = artWorkTemp);
+                           .subscribe();
+  }
+
+  isEditable(artWork: ArtWork) {
+    if (artWork.editable) {
+      artWork.editable = false;
+    } else {
+      artWork.editable = true;
+    }
   }
 
   // showKey(event) {

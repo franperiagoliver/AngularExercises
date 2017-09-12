@@ -13,8 +13,8 @@
         <h2>{{artWork.name | uppercase}}</h2>
         <p>{{artWork.type}}</p>
         <p>{{artWork.medium}}</p>
-        <p>{{artWork.description}}</p>
-        <p><input type="text" [(ngModel)]="artWork.description" (change)="updateItem(artWork)"></p>
+        <p *ngIf="!artWork.editable" id="description" (click)="isEditable(artWork)">{{artWork.description}}</p>
+        <p *ngIf="artWork.editable"><input type="text" [(ngModel)]="artWork.description" (blur)="getUpdateService(artWork)"></p>
         <div>
             <button (click)="decreaseQuantity(artWork)" [disabled]="artWork.quantity === 0">-</button>
             <input type="number" maxlength="2" placeholder="0" class="amount" [(ngModel)]="artWork.quantity" />

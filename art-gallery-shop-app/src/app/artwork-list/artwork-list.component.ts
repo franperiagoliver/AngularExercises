@@ -3,6 +3,7 @@ import { ArtWork } from './artwork.model';
 import { ARTWORKS } from './mocks';
 import { ArtWorkListService } from './artwork-list.service';
 import { CartService } from '../cart/cart.service';
+import { Cart } from '../cart/cart.model';
 
 @Component({
   selector: 'app-artwork-list',
@@ -13,8 +14,11 @@ export class ArtworkListComponent implements OnInit {
 
   myArtWorks: ArtWork[];
   artWorkFilter = '';
+  cart: Cart;
 
-  constructor(private artWorkListService: ArtWorkListService, private cartService: CartService) { }
+  constructor(private artWorkListService: ArtWorkListService, private cartService: CartService) {
+    this.cart = Cart.getInstance();
+  }
 
   ngOnInit() {
     this.artWorkListService.getItemList()
@@ -54,11 +58,11 @@ export class ArtworkListComponent implements OnInit {
   }
 
   addArtWork(artWork: ArtWork) {
-    console.log(this.cartService.addToCart(artWork));
+    this.cartService.addToCart(artWork);
   }
 
-  totalInCart() {
-    this.cartService.totalArtWorksInCart();
+  totalArtWorksInCart() {
+    return this.cart.artWorks.length;
   }
 
   // showKey(event) {

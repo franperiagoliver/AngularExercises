@@ -1,6 +1,7 @@
 <div>
-    <h2>There are {{totalArtWorks()}} art works in stock.</h2>
-    <h3>There are {{totalInCart()}} art works in cart.</h3>
+    <h2>There are {{totalArtWorks()}} art works in stock</h2>
+    <h3>There are {{totalArtWorksInCart()}} art works in cart</h3>
+    <button routerLink="/order" routerLinkActive="active">Go to cart!</button>
     <div class="input-browser">
         <p>Search an art work by name</p>
         <input type="search" maxlength=26 placeholder="Search an art work" [(ngModel)]="artWorkFilter">

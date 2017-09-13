@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Routes, RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { ArtworkComponent } from './artwork-list/artwork/artwork.component';
 import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
 import { CartService } from './cart/cart.service';
+import { ShippingInformationComponent } from './shipping-information/shipping-information.component';
 
 const appRoutes: Routes = [
   {path: 'art-gallery', component: ArtworkListComponent, pathMatch: 'full'},
@@ -32,13 +33,15 @@ const appRoutes: Routes = [
     ArtworkComponent,
     CartComponent,
     OrderComponent,
+    ShippingInformationComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     Ng2FilterPipeModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule
   ],
   providers: [
     ArtWorkListService,

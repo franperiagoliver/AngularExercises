@@ -12,7 +12,12 @@ export class CartService {
     }
 
     addToCart(artWork: ArtWork) {
-        this.cart.artWorks.push(artWork);
+        let index = this.cart.artWorks.indexOf(artWork);
+        if (index !== -1) {
+            this.cart.artWorks[index].quantity += artWork.quantity;
+        } else {
+            this.cart.artWorks.push(artWork);
+        }
     }
 
     removeToCart(artWork: ArtWork) {
@@ -32,7 +37,7 @@ export class CartService {
     }
 
     totalAmount() {
-        return this.cart.artWorks.reduce( (prev, current) => prev + current.quantity, 0);
+        return this.cart.artWorks.reduce( (prev, current) => prev + current.price, 0);
     }
 
 }

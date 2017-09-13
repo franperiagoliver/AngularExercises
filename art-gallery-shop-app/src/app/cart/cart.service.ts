@@ -5,16 +5,14 @@ import { Cart } from './cart.model';
 @Injectable()
 export class CartService {
 
-    artWorks: Array<ArtWork>;
     cart: Cart;
 
     constructor() {
-        Cart.getInstance();
-        this.artWorks = new Array<ArtWork>();
+        this.cart = Cart.getInstance();
     }
 
     addToCart(artWork: ArtWork) {
-        this.cart.artWorks.push(artWork);
+        console.log(this.cart.artWorks.push(artWork));
     }
 
     removeToCart(artWork: ArtWork, artWorks: Array<ArtWork>) {

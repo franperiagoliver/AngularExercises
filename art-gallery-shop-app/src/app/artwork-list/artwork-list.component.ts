@@ -54,7 +54,7 @@ export class ArtworkListComponent implements OnInit {
   }
 
   addArtWork(artWork: ArtWork) {
-    this.cartService.addToCart(artWork);
+    console.log(this.cartService.addToCart(artWork));
   }
 
   totalInCart() {

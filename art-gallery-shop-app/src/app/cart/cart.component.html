@@ -1,11 +1,6 @@
-<div>
-    <h2>Your cart content</h2>
-    <div>
-        <section *ngFor="let artwork of cartService.cart.artWorks">
-            <p>{{artwork.name}}</p>
-            <p>{{artwork.price}} x {{artwork.quantity}} = {{cartService.getPriceOfItem(artwork)}}</p>
-            <button (click)="cartService.removeToCart(artwork)">Remove art work</button>
-            <hr>
-        </section>
-    </div>
+<div *ngFor="let artWork of cart.artWorks" class="cart-items">
+    <h4>Your cart content</h4>
+    <p class="item-name">{{artWork.name}}</p>
+    <p>{{artWork.price}} x {{artWork.quantity}} = {{artWork.price * artWork.quantity}}</p>
+    <button (click)="removeFromCart(artwork)">Remove</button>
 </div>

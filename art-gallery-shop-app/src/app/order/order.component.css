@@ -1,0 +1,12 @@
+.apps {
+    box-shadow: 0px 2px 10px #ccc;
+    margin: 0 auto;
+    margin-top: 5em;
+    border-radius: 10px;
+    width: 50%;
+    height: 25em;
+}
+
+.total-amount {
+    text-align: center;
+}

@@ -6,13 +6,17 @@ import { ArtWork } from '../app/artwork-list/artwork.model';
 })
 export class SearchPipe implements PipeTransform {
 
-  transform(artWorks: ArtWork[], search: string): ArtWork[] {
-    if (!artWorks) {
-      return null;
+  transform(artWorks: ArtWork[], attribute: string, search: any): ArtWork[] {
+    if (search && search.trim().length > 0) {
+      return artWorks.filter(
+        item => {
+          if (item[attribute].toUpperCase().indexOf(search.toUpperCase()) !== -1) {
+            return item[attribute];
+          }
+        }
+      );
+    } else {
+      return artWorks;
     }
-    if (artWorks && search && search.trim().length === 0) { return artWorks; }
-    return artWorks.filter(artWork =>
-      artWork.name.trim().toLowerCase().indexOf(search.trim().toLowerCase()) !== -1
-    );
   }
 }

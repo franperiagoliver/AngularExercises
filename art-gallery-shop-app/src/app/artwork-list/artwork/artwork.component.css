@@ -1,0 +1,13 @@
+.editable {
+    cursor: pointer;
+    border: 1px solid green;
+    transition: all .3s ease;
+}
+
+.editable:hover{
+    border-color: #033500;
+}
+
+#input-editable{
+    padding:.5em;
+}

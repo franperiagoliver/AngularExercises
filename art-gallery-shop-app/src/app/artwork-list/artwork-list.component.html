@@ -1,35 +1,17 @@
 <div>
-    <h2>There are {{totalArtWorks()}} art works in stock</h2>
-    <h3>There are {{totalArtWorksInCart()}} art works in cart</h3>
-    <button routerLink="/order" routerLinkActive="active">Go to cart!</button>
-    <div class="input-browser">
-        <p>Search an art work by name</p>
-        <input type="search" maxlength=26 placeholder="Search an art work" [(ngModel)]="artWorkFilter">
-    </div>
+    <h2>There are {{totalStockOfArtWorks()}} art works in stock</h2>
+    <h3 *ngIf="totalSelected() > 0">You've selected {{totalSelected()}} art works</h3>
+    <h3 *ngIf="totalSelected() === 0">You haven't selected art works yet</h3>
 </div>
-<div>
-    <section *ngFor="let artWork of myArtWorks | search:artWorkFilter" [class.selected]="artWork.selected">
-        <img [src]="getImage(artWork)" />
-        <h2>{{artWork.name | uppercase}}</h2>
-        <p>{{artWork.type}}</p>
-        <p>{{artWork.medium}}</p>
-        <p *ngIf="!artWork.editable" id="description" (click)="isEditable(artWork)">{{artWork.description}}</p>
-        <p *ngIf="artWork.editable"><input type="text" [(ngModel)]="artWork.description" (blur)="getUpdateService(artWork)"></p>
-        <div>
-            <button (click)="decreaseQuantity(artWork)" [disabled]="artWork.quantity === 0">-</button>
-            <input type="number" maxlength="2" placeholder="0" class="amount" [(ngModel)]="artWork.quantity" />
-            <button (click)="increaseQuantity(artWork)" [disabled]="artWork.stock === 0">+</button>
-            <!-- <input type="text" (keydown)="showKey($event)" />
-                      <h2 (mouseover)="getCoord($event)">Hover Me</h2> -->
-        </div>
-        <div class="stock">
-        <p *ngIf="artWork.stock > 0">{{artWork.stock}} in stock</p>
-        <p id="out-stock" *ngIf="artWork.stock === 0">Out of Stock</p>
-        </div>
-        <div class="price">
-        <p>{{artWork.price | currency:'USD':true}}</p>
-        <p id="unsaleable" *ngIf="artWork.price === 0.0">Unsaleable</p>
-        </div>
-        <button (click)="addArtWork(artWork)">Add to cart</button><br><br>
-    </section>
+<div class="browser">
+    <input id="input-search" type="search" maxlength="26" placeholder="Search an art work" [(ngModel)]="mySearch">
 </div>
+<div class="cart">
+    <a routerLink="/order" routerLinkActive="active">
+        <p>{{totalArtworksOfCart()}}</p>
+        <img src="../../assets/cart.png" alt="Cart image" title="Cart image" />
+    </a>
+</div>
+<ul>
+    <app-artwork *ngFor="let artWork of myArtWorks | search:'name':mySearch" [artWork]="artWork"></app-artwork>
+</ul>

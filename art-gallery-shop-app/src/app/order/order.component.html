@@ -1,11 +1,16 @@
-<div>
-    <app-cart></app-cart>
+<div *ngIf="!order.ordered">
+    <div id="apps">
+        <app-cart></app-cart>
+    </div>
     <app-shipping-information></app-shipping-information>
-    <div>
-        <p>Total amount: {{cartService.totalAmount()}}</p>
+    <div class="total-amount">
+        <p>Total amount: {{totalAmount()}}</p>
+        <button (click)="changeOrdered()">Purchase</button>
     </div>
     <div>
         <button routerLink="/art-gallery" routerLinkActive="active">Cancel operation</button>
     </div>
-
+</div>
+<div *ngIf="order.done" class="amount">
+        <h1>Your total amount is {{totalAmount()}}</h1>
 </div>

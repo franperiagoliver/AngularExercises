@@ -6,7 +6,6 @@ import {Routes, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { ArtworkListComponent } from './artwork-list/artwork-list.component';
 
-import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import { SearchPipe } from '../pipes/search.pipe';
 import { ArtWorkListService } from './artwork-list/artwork-list.service';
 import { HttpModule } from '@angular/http';
@@ -38,14 +37,15 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    Ng2FilterPipeModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule
   ],
   providers: [
     ArtWorkListService,
-    CartService
+    CartService,
+    HttpModule,
+    FormsModule
   ],
   bootstrap: [AppComponent]
 })

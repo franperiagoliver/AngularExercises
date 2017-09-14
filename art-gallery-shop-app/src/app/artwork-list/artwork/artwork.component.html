@@ -1,12 +1,12 @@
 <li [class.selected]="artWork.selected">
     <img [src]="getImage(artWork)" [title]="artWork.name" [alt]="artWork.description">
-    <h2>{{item.name | uppercase}}</h2>
+    <h2>{{artWork.name | uppercase}}</h2>
     <p>{{artWork.type}}</p>
     <p>{{artWork.medium}}</p>
-    <p *ngIf="!artWork.editable" class="description" (click)="isEditable(artWork)">{{artWork.description}}</p>
+    <p *ngIf="!artWork.editable" class="description" (click)="isEditable(artWork)" class="editable">{{artWork.description}}</p>
     <div *ngIf="artWork.editable">
         <p><input type="text" [(ngModel)]="artWork.description" (blur)="getUpdateService(artWork)" autofocus></p>
-        <p><input id="input-editable" type="text" (blur)="isEditable(item)" [(ngModel)]="item.description" class="input-edit"
+        <p><input id="input-editable" type="text" (blur)="isEditable(artWork)" [(ngModel)]="artWork.description" class="input-edit"
                 autofocus></p>
     </div>
     <div class="quantity">

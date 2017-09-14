@@ -1,0 +1,29 @@
+<li [class.selected]="artWork.selected">
+    <img [src]="getImage(artWork)" [title]="artWork.name" [alt]="artWork.description">
+    <h2>{{item.name | uppercase}}</h2>
+    <p>{{artWork.type}}</p>
+    <p>{{artWork.medium}}</p>
+    <p *ngIf="!artWork.editable" class="description" (click)="isEditable(artWork)">{{artWork.description}}</p>
+    <div *ngIf="artWork.editable">
+        <p><input type="text" [(ngModel)]="artWork.description" (blur)="getUpdateService(artWork)" autofocus></p>
+        <p><input id="input-editable" type="text" (blur)="isEditable(item)" [(ngModel)]="item.description" class="input-edit"
+                autofocus></p>
+    </div>
+    <div class="quantity">
+        <button id="remove-quantity" (click)="decreaseQuantity(artWork)" [disabled]="artWork.quantity === 0">-</button>
+        <input id="input-quantity" type="number" [value]="artWork.quantity" maxlength="2" placeholder="0" class="amount" [(ngModel)]="artWork.quantity"
+            disabled/>
+        <button id="add-quantity" (click)="increaseQuantity(artWork)" [disabled]="artWork.stock === 0">+</button>
+        <!-- <input type="text" (keydown)="showKey($event)" />
+                      <h2 (mouseover)="getCoord($event)">Hover Me</h2> -->
+    </div>
+    <div class="stock">
+        <p *ngIf="artWork.stock > 0">{{artWork.stock}} in stock</p>
+        <p id="out-stock" *ngIf="artWork.stock === 0">Out of Stock</p>
+    </div>
+    <div class="price">
+        <p>{{artWork.price | currency:'USD':true}}</p>
+        <p id="unsaleable" *ngIf="artWork.price === 0.0">Unsaleable</p>
+    </div>
+    <button (click)="addArtWork(artWork)">Add to cart</button>
+</li>

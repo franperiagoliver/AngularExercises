@@ -40,4 +40,10 @@ export class CartService {
         return this.cart.artWorks.reduce( (prev, current) => prev + current.price, 0);
     }
 
+    lenghtOfCart() {
+        if ( this.cart.artWorks ) {
+            return this.cart.artWorks.reduce((prev, current) => prev + current.quantity, 0);
+        }
+    }
+
 }

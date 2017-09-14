@@ -22,10 +22,14 @@
             <!-- <input type="text" (keydown)="showKey($event)" />
                       <h2 (mouseover)="getCoord($event)">Hover Me</h2> -->
         </div>
+        <div class="stock">
         <p *ngIf="artWork.stock > 0">{{artWork.stock}} in stock</p>
-        <p *ngIf="artWork.stock === 0">Out of Stock</p>
+        <p id="out-stock" *ngIf="artWork.stock === 0">Out of Stock</p>
+        </div>
+        <div class="price">
         <p>{{artWork.price | currency:'USD':true}}</p>
-        <p *ngIf="artWork.price === 0.0">Unsaleable</p>
+        <p id="unsaleable" *ngIf="artWork.price === 0.0">Unsaleable</p>
+        </div>
         <button (click)="addArtWork(artWork)">Add to cart</button><br><br>
     </section>
 </div>

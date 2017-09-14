@@ -1,16 +1,19 @@
-<div>
-    <h2>There are {{totalStockOfArtWorks()}} art works in stock</h2>
-    <h3 *ngIf="totalSelected() > 0">You've selected {{totalSelected()}} art works</h3>
-    <h3 *ngIf="totalSelected() === 0">You haven't selected art works yet</h3>
-</div>
-<div class="browser">
-    <input id="input-search" type="search" maxlength="26" placeholder="Search an art work" [(ngModel)]="mySearch">
-</div>
-<div class="cart">
-    <a routerLink="/order" routerLinkActive="active">
-        <p>{{totalArtworksOfCart()}}</p>
-        <img src="../../assets/cart.png" alt="Cart image" title="Cart image" />
-    </a>
+<div class=fila>
+    <div class="browser">
+        <input id="input-search" type="search" maxlength="26" placeholder="Search an art work" [(ngModel)]="mySearch">
+    </div>
+    <div>
+        <h2>There are {{totalStockOfArtWorks()}} art works in stock</h2>
+        <h3 *ngIf="totalSelected() > 0">You've selected {{totalSelected()}} art works</h3>
+        <h3 *ngIf="totalSelected() === 0">You haven't selected art works yet</h3>
+    </div>
+
+    <div class="cart">
+        <a routerLink="/order" routerLinkActive="active">
+            <p>{{totalArtworksOfCart()}}</p>
+            <img src="../../assets/cart.png" alt="Cart image" title="Cart image" width="50" />
+        </a>
+    </div>
 </div>
 <ul>
     <app-artwork *ngFor="let artWork of myArtWorks | search:'name':mySearch" [artWork]="artWork"></app-artwork>

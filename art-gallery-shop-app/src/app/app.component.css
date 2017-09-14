@@ -1,13 +1,20 @@
 .image {
-    position: relative;
-    width: 100%;
+    background-image: url("https://img1.etsystatic.com/000/0/5262721/il_fullxfull.334086175.jpg");
+    height: 100px;
+    margin: 0;
+    border-bottom: 5px solid grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 100%;
+    background-position: center;
 }
 
 h1 {
-    position: absolute;
-    top: 200px;
-    left: 0;
     width: 100%;
+    margin: 10px;
+    text-shadow: 1px 1px 2px white;
+    text-shadow: 2px 2px 4px red;
 }
 
 img {

@@ -1,6 +1,6 @@
+<h4>Your cart content</h4>
 <div *ngFor="let artWork of cart.artWorks" class="cart-items">
-    <h4>Your cart content</h4>
     <p class="item-name">{{artWork.name}}</p>
     <p>{{artWork.price}} x {{artWork.quantity}} = {{artWork.price * artWork.quantity}}</p>
-    <button (click)="removeFromCart(artwork)">Remove</button>
+    <button (click)="removeFromCart(artWork)">Remove</button>
 </div>

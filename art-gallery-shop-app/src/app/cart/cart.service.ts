@@ -28,6 +28,7 @@ export class CartService {
             }
           } else {
             this.cart.artWorks.push(artWorkTemp);
+            artWork.quantity = 0;
           }
         }
     }

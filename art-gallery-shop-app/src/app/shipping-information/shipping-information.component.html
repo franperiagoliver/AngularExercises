@@ -1,13 +1,22 @@
 <div>
     <h4>Your shipping address</h4>
     <div class="form">
-        <form [formGroup]="form">
-            <p>Name</p>
-            <input type="text" formControlName="name" />
-            <p>Address</p>
-            <input type="text" formControlName="address" />
-            <p>E-mail</p>
-            <input type="text" formControlName="email" /><br><br>
+        <form [formGroup]="form" (submit)="onSubmit()">
+            <p>
+                <label>Name</label>
+                <input type="text" formControlName="name" />
+            </p>
+            <p>
+                <label>Address</label>
+                <input type="text" formControlName="address" />
+            </p>
+            <p>
+                <label>Email</label>
+                <input type="text" formControlName="email" /><br><br>
+            </p>
+            <p>
+                <button type="submit" [disabled]="!form.valid">Order</button><br><br>
+            </p>
         </form>
     </div>
 </div>
